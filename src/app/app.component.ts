@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PhotoService } from '../photos/photo/photo.service';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
 
-  photos = [
-    {
-      url: "https://s2.glbimg.com/vEQUudcmd1LgW5tI4Oi3R2Z_wsw=/620x413/e.glbimg.com/og/ed/f/original/2015/07/30/dsc9081.jpg", 
-      description: "Subaru Impreza"},
-    {
-      url: "https://www.caranddriver.com/images/17q1/674191/2018-jaguar-xe-updated-with-new-engine-options-news-car-and-driver-photo-675945-s-original.jpg",
-      description:"Jaguar XE"
-    }
-  ]
- 
+  photos: Object[] = [];
+
+  constructor(private photoService: PhotoService){}
+    
+  ngOnInit(): void{
+    this.photoService
+      .listFromUser('flavio')
+      .subscribe(photos => this.photos = photos);
+  }
 }
