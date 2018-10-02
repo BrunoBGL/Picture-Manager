@@ -1,2 +1,8 @@
-<img [src]="link" [alt]="description">
+<pm-photo
+    *ngFor="let photo of photos"
+    [url]="photo.url"
+    [description]="photo.description">
+</pm-photo>
+
+
 
