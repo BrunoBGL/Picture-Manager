@@ -8,4 +8,4 @@ import { HttpClientModule } from '@angular/common/http';
     imports: [CommonModule, HttpClientModule],
     exports: [PhotoComponent]
 })
-export class PhotoModule{}
+export class PhotoModule {}

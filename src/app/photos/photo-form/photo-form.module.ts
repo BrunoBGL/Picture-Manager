@@ -6,4 +6,4 @@ import { PhotoFormComponent } from './photo-form.component';
     declarations: [PhotoFormComponent],
     imports: [CommonModule]
 })
-export class PhotoFormModule{}
+export class PhotoFormModule { }

@@ -1,22 +1,21 @@
-import { HttpClient, HttpParams } from "@angular/common/http";
-import { injectAttribute } from "@angular/core/src/render3";
-import { Injectable } from "@angular/core";
-import { Photo } from "./photo";
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Photo } from './photo';
 
 const API = 'http://localhost:3000';
 
 @Injectable({providedIn: 'root'})
-export class PhotoService{
-    constructor(private http: HttpClient){}
+export class PhotoService {
+    constructor(private http: HttpClient) {}
 
-    listFromUser(userName: string){
+    listFromUser(userName: string) {
        return this.http
-         .get<Photo[]>(API+'/'+userName+'/photos');
+         .get<Photo[]>(API + '/' + userName + '/photos');
     }
 
-    listFromUserPaginated(userName: string, page: number){
+    listFromUserPaginated(userName: string, page: number) {
         const params = new HttpParams().append('page', page.toString());
         return this.http
-          .get<Photo[]>(API+'/'+userName+'/photos', {params});
+          .get<Photo[]>(API + '/' + userName + '/photos', {params});
      }
 }

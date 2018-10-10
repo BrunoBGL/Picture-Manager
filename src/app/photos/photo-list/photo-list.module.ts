@@ -18,12 +18,10 @@ import { DarkenOnHoverDirective } from '../../directives/darken-on-hover/darken-
         SearchComponent,
         DarkenOnHoverDirective
     ],
-    imports:[
-        CommonModule, 
-        PhotoModule, 
+    imports: [
+        CommonModule,
+        PhotoModule,
         CardModule
     ]
 })
-export class PhotoListModule{
-
-}
+export class PhotoListModule {}

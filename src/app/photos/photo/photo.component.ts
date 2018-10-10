@@ -1,10 +1,11 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
 @Component({
+    // tslint:disable-next-line:component-selector
     selector: 'pm-photo',
     templateUrl : 'photo.component.html'
 })
-export class PhotoComponent{
-   @Input() description ='';
+export class PhotoComponent {
+   @Input() description = '';
    @Input() url = '';
 }

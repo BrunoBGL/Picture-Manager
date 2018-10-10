@@ -6,10 +6,10 @@ export class FilterByDescription implements PipeTransform {
     transform(photos: Photo[], descripitionQuery: string) {
         descripitionQuery = descripitionQuery.trim().toLowerCase();
 
-        if(descripitionQuery){
-            return photos .filter(photo => 
+        if (descripitionQuery) {
+            return photos .filter(photo =>
                     photo.description.toLowerCase().includes(descripitionQuery));
-        }else{
+        } else {
             return photos;
         }
     }
